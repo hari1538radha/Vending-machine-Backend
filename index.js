@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use("/api", Routes);
 mongoose.set('strictQuery', false)
 mongoose.connect(
-    `mongodb+srv://HariR:${process.env.MongoPassword}@cluster0.fphdtyd.mongodb.net/?retryWrites=true&w=majority`,
+    `mongodb+srv://HariR:${process.env.MONGO_PASS}@cluster0.fphdtyd.mongodb.net/?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedtopology: true,
