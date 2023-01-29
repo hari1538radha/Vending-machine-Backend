@@ -1,4 +1,4 @@
-import { Express } from "express";
+import { express } from "express";
 // import { mongoUrl } from "./Config/config.js";
 import mongoose from "mongoose";
 import Routes from "./Routes/Routes.js";
