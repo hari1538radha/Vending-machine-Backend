@@ -1,4 +1,4 @@
-import Express from "express";
+const express = require('express')
 // import { mongoUrl } from "./Config/config.js";
 import mongoose from "mongoose";
 import Routes from "./Routes/Routes.js";
@@ -7,7 +7,7 @@ import cors from "cors";
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-const app = Express();
+const app = express();
 
 const PORT = process.env.PORT || 5000;
 
