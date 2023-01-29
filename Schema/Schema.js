@@ -12,9 +12,12 @@ const AddProductSchema = new mongoose.Schema({
   Catogory: {
     type: String,
   },
-  Quantity:{
-    type:Number
-  }
+  Quantity: {
+    type: Number,
+  },
+  ImageURL: {
+    type: String,
+  },
 });
 
-export const AddProductModel = new model ("addproduct" ,AddProductSchema );
+export const AddProductModel = new model("addproduct", AddProductSchema);
