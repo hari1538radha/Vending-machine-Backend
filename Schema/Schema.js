@@ -7,11 +7,14 @@ const AddProductSchema = new mongoose.Schema({
     type: String,
   },
   Price: {
-    type: String,
+    type: Number,
   },
   Catogory: {
     type: String,
   },
+  Quantity:{
+    type:Number
+  }
 });
 
 export const AddProductModel = new model ("addproduct" ,AddProductSchema );

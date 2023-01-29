@@ -1,7 +1,7 @@
 import { AddProductModel } from "../Schema/Schema.js";
 export const AddProduct = (req, res) => {
   const body = req.body;
-  if (!(body.SlotName && body.ProductName && body.Price && body.Catogory)) {
+  if (!(body.SlotName && body.ProductName && body.Price && body.Catogory && body.Quantity)) {
     res.send({
       status: 204,
       message: "please enter the product details completely",
@@ -12,6 +12,7 @@ export const AddProduct = (req, res) => {
       ProductName: body.ProductName,
       Price: body.Price,
       Catogory: body.Catogory,
+      Quantity:body.Quantity
     });
 
     AddProductdata.save((err, data) => {
