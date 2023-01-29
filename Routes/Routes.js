@@ -1,6 +1,11 @@
-import pkg from 'express';
-const { express } = pkg;
-import { AddProduct } from "../Controller/Add.js";
+import pkg from "express";
+import { AddProduct } from "../Controller/AddProducts.js";
+import { productDetails } from "../Controller/GetProducts.js";
+
 const Routes = pkg.Router();
+const { express } = pkg;
+
 Routes.post("/add", AddProduct);
-export default Routes
+Routes.get("/products",productDetails)
+
+export default Routes;
