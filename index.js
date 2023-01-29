@@ -1,5 +1,5 @@
 import pkg from 'express';
-const { express } = pkg;
+
 // import { mongoUrl } from "./Config/config.js";
 import mongoose from "mongoose";
 import Routes from "./Routes/Routes.js";
@@ -12,7 +12,8 @@ const app = pkg();
 
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({ credentials: true, origin:"http://localhost:3000"}));
+app.use(cors({ credentials: true
+}));
 
 
 app.use(bodyParser.json({limit: '50mb'}));
@@ -28,12 +29,12 @@ mongoose.connect(
   (err) => {
     if (!err) {
       console.log("connected to db");
+      app.listen(PORT, () => {
+        console.log(`server listening at http://localhost:${PORT}`);
+      });
     } else {
       console.log("error", err);
     }
   }
 );
 
-app.listen(PORT, () => {
-  console.log(`server listening at http://localhost:${PORT}`);
-});
