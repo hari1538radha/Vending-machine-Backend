@@ -1,5 +1,5 @@
-const express = require('express')
+import { Express } from "express";
 import { AddProduct } from "../Controller/Add.js";
-const Routes = express.Router();
+const Routes = Express.Router();
 Routes.post("/add", AddProduct);
 export default Routes
