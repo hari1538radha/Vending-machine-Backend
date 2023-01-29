@@ -1,0 +1,1 @@
+const mongoURL="mongodb+srv://HariR:<password>@cluster0.fphdtyd.mongodb.net/?retryWrites=true&w=majority"
