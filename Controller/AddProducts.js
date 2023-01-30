@@ -8,7 +8,9 @@ export const AddProduct = (req, res) => {
       body.Price &&
       body.Catogory &&
       body.Quantity &&
-      body.ImageURL
+      body.ImageURL &&
+      body.ProductManufactureDate &&
+      body.ProductExpiryDate
     )
   ) {
     res.send({
@@ -23,6 +25,8 @@ export const AddProduct = (req, res) => {
       Catogory: body.Catogory,
       Quantity: body.Quantity,
       ImageURL: body.ImageURL,
+      ProductManufactureDate:body.ProductManufactureDate,
+      ProductExpiryDate:body.ProductExpiryDate
     });
 
     AddProductdata.save((err, data) => {
