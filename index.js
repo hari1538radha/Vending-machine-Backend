@@ -1,6 +1,5 @@
 import pkg from "express";
 
-// import { mongoUrl } from "./Config/config.js";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
@@ -20,6 +19,7 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use("/api", Routes);
 mongoose.set("strictQuery", false);
+
 mongoose.connect(
   `mongodb+srv://HariR:${process.env.MONGO_PASS}@cluster0.fphdtyd.mongodb.net/?retryWrites=true&w=majority`,
   {
