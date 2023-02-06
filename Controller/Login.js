@@ -9,6 +9,7 @@ export const AdminLogin = async (req, res) => {
     });
   } else {
     const data = await LoginData.findOne({ AdminName: body.AdminName });
+    console.log(data)
     if (data) {
       if (body.Password == data.Password) {
         res.send({
