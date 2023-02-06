@@ -11,12 +11,21 @@ export const AdminLogin = async (req, res) => {
     const data = await LoginData.findOne({ AdminName: body.AdminName });
     if (data) {
       if (body.Password == data.Password) {
-        res.status(200).send({ message: "Login success" });
+        res.send({
+          status: 200,
+          message: "Login success",
+        });
       } else {
-        res.status(200).send({ message: "Invalid Credentials" });
+        res.send({
+          status: 204,
+          message: "Invalid Credentials",
+        });
       }
     } else {
-      res.status(401).send({ message: "User does not exist" });
+      res.send({
+        status: 401,
+        message: "User does not exist",
+      });
     }
   }
 };
