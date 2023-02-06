@@ -1,7 +1,7 @@
 import { LoginData } from "../Schema/LoginSchema.js";
 
 export const AdminLogin = async (req, res) => {
-  const body =await req.body;
+  const body = req.body;
   console.log(body.AdminName)
   if (!body.AdminName) {
     res.send({
