@@ -1,4 +1,5 @@
 import mongoose, { model } from "mongoose";
+
 const AddProductSchema = new mongoose.Schema(
   {
     SlotName: {
@@ -28,5 +29,15 @@ const AddProductSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+const Login = new mongoose.Schema({
+  AdminName: {
+    type: String,
+  },
+  Password: {
+    type: String,
+  },
+});
+export const LoginData = new model("Admin", Login);
 
 export const AddProductModel = new model("addproduct", AddProductSchema);
