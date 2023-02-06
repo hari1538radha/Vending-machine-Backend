@@ -1,6 +1,6 @@
-import { LoginData } from "../Schema/Schema";
+import { LoginData } from "../Schema/Schema.js";
 
-export const AdminLogin = (req, res) => {
+export const LoginData = (req, res) => {
   const body = req.body;
   if (!body.AdminName) {
     res.send({
