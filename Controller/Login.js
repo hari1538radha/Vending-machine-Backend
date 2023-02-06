@@ -1,7 +1,8 @@
 import { LoginData } from "../Schema/LoginSchema.js";
 
 export const AdminLogin = async (req, res) => {
-  const body = req.body;
+  const body =await req.body;
+  console.log(body.AdminName)
   if (!body.AdminName) {
     res.send({
       status: 204,
@@ -9,7 +10,7 @@ export const AdminLogin = async (req, res) => {
     });
   } else {
     const data = await LoginData.findOne({ AdminName: body.AdminName });
-    console.log(data)
+       
     if (data) {
       if (body.Password == data.Password) {
         res.send({

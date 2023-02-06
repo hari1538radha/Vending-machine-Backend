@@ -8,6 +8,6 @@ const { express } = pkg;
 
 Routes.post("/add", AddProduct);
 Routes.get("/products",productDetails)
-Routes.get("/login",AdminLogin)
+Routes.post("/login",AdminLogin)
 
 export default Routes;
