@@ -1,6 +1,6 @@
-import { LoginData } from "../Schema/Schema.js";
+import { LoginData } from "../Schema/LoginSchema.js";
 
-export const LoginData = (req, res) => {
+export const AdminLogin = async (req, res) => {
   const body = req.body;
   if (!body.AdminName) {
     res.send({
@@ -8,25 +8,15 @@ export const LoginData = (req, res) => {
       message: "please enter the Login data completely",
     });
   } else {
-    const LoginData = new LoginData({
-      AdminName: body.AdminName,
-      Password: body.Password,
-    });
-    const data =  AdminLogin.findOne({ AdminName: body.AdminName });
-
+    const data = await LoginData.findOne({ AdminName: body.AdminName });
     if (data) {
-      const validPassword = compare(
-        body.Password,
-        data.Password
-      );
-      if (validPassword) {
-        res.status(200).send({ message: "Login success", data });
+      if (body.Password == data.Password) {
+        res.status(200).send({ message: "Login success" });
       } else {
-        res.status(200).send({ error: "Invalid Credentials" });
+        res.status(200).send({ message: "Invalid Credentials" });
       }
     } else {
-      res.status(401).send({ error: "User does not exist" });
+      res.status(401).send({ message: "User does not exist" });
     }
-  };
   }
-
+};
