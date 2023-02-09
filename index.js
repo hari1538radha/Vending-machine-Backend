@@ -15,7 +15,7 @@ const app = pkg();
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, { cors: { origin: '*' } });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8002;
 
 app.use(cors({ credentials: true }));
 
@@ -25,6 +25,7 @@ app.use("/api", Routes);
 mongoose.set("strictQuery", false);
 
 mongoose.connect(
+  
   `mongodb+srv://HariR:${process.env.MONGO_PASS}@cluster0.fphdtyd.mongodb.net/?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
@@ -59,6 +60,6 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(PORT, () => {
+httpServer.listen(3000, () => {
   console.log("Running on : ", httpServer.address());
 });
