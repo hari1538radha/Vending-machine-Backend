@@ -37,3 +37,24 @@ mongoose.connect(
     }
   }
 );
+let buttonState = false;
+
+io.on("connection", (socket) => {
+  console.log("New Connection");
+
+  io.to(socket.id).emit("buttonState", buttonState);
+
+  socket.on("disconnect", () => {
+    console.log("Disconnected");
+  });
+
+  socket.on("buttonState", (value) => {
+    console.log("buttonState:", value);
+    buttonState = value;
+    socket.broadcast.emit("buttonState", value);
+  });
+});
+
+httpServer.listen(PORT, () => {
+  console.log("Running on : ", httpServer.address());
+});
