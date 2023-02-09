@@ -4,12 +4,16 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
 import * as dotenv from "dotenv";
+import http from 'http';
+import { Server } from 'socket.io';
 
 import Routes from "./Routes/Routes.js";
 
 dotenv.config();
 
 const app = pkg();
+const httpServer = http.createServer(app);
+const io = new Server(httpServer, { cors: { origin: '*' } });
 
 const PORT = process.env.PORT || 5000;
 
