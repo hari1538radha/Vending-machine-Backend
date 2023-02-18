@@ -13,6 +13,9 @@ const AddProductSchema = new mongoose.Schema(
     Col:{
       type:Number
     },
+    Order:{
+      type:Number
+    },
     ProductName: {
       type: String,
     },

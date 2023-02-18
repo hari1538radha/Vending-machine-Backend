@@ -8,6 +8,7 @@ export const AddProduct = (req, res) => {
       body.Price &&
       body.Row &&
       body.Col &&
+      body.Order &&
       body.Catogory &&
       body.Quantity &&
       body.ImageURL &&
@@ -26,6 +27,7 @@ export const AddProduct = (req, res) => {
       Price: body.Price,
       Row: body.Row,
       Col: body.Col,
+      Order:body.Order,
       Catogory: body.Catogory,
       Quantity: body.Quantity,
       ImageURL: body.ImageURL,
