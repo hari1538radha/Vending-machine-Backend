@@ -22,9 +22,9 @@ app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use("/api", Routes);
 mongoose.set("strictQuery", false);
-// ${process.env.MONGO_PASS}
+
 mongoose.connect(
-  `mongodb+srv://HariR:hari1538@cluster0.fphdtyd.mongodb.net/?retryWrites=true&w=majority`,
+  `mongodb+srv://HariR:${process.env.MONGO_PASS}@cluster0.fphdtyd.mongodb.net/?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedtopology: true,
@@ -37,7 +37,7 @@ mongoose.connect(
       });
     } else {
       console.log("error", err);
-    }
+    }git
   }
 );
 let buttonState = false;
