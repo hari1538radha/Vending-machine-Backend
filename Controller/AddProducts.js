@@ -6,6 +6,8 @@ export const AddProduct = (req, res) => {
       body.SlotName &&
       body.ProductName &&
       body.Price &&
+      body.Row &&
+      body.Col &&
       body.Catogory &&
       body.Quantity &&
       body.ImageURL &&
@@ -22,11 +24,13 @@ export const AddProduct = (req, res) => {
       SlotName: body.SlotName,
       ProductName: body.ProductName,
       Price: body.Price,
+      Row: body.Row,
+      Col: body.Col,
       Catogory: body.Catogory,
       Quantity: body.Quantity,
       ImageURL: body.ImageURL,
-      ProductManufactureDate:body.ProductManufactureDate,
-      ProductExpiryDate:body.ProductExpiryDate
+      ProductManufactureDate: body.ProductManufactureDate,
+      ProductExpiryDate: body.ProductExpiryDate,
     });
 
     AddProductdata.save((err, data) => {

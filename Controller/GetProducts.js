@@ -1,23 +1,23 @@
 import { AddProductModel } from "../Schema/Schema.js";
+
 export const productDetails = (req, res) => {
-  AddProductModel.find((err, data) => {
-    if (err) {
-      return res.send({
-        status: 404,
-        message: "error",
-        err,
-      });
-    } else if (data.length < 1) {
-      res.send({
-        message: "No product found",
-        status: 204,
-      });
-    } else {
-      res.send({
-        status: 200,
-        message: "products listed",
-        data,
-      });
-    }
-  });
+  const MainData = [];
+  const data = AddProductModel.find({ Row: 1 })
+    .sort({ Col: 1 })
+    .then((result) => {
+      MainData.push(result);
+      const Row2 = AddProductModel.find({ Row: 2 })
+        .sort({ Col: 1 })
+        .then((result) => {
+          MainData.push(result);
+          const Row3 = AddProductModel.find({ Row: 3 })
+            .sort({ Col: 1 })
+            .then((result) => {
+              MainData.push(result);
+              res.send(MainData);
+            });
+        });
+    });
+
+  MainData.pop();
 };

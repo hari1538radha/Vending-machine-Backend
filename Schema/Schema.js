@@ -4,6 +4,14 @@ const AddProductSchema = new mongoose.Schema(
   {
     SlotName: {
       type: String,
+      require:true
+    },
+    Row:{
+      type:Number,
+    require:true
+    },
+    Col:{
+      type:Number
     },
     ProductName: {
       type: String,
