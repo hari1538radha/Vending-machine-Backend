@@ -37,7 +37,7 @@ mongoose.connect(
       });
     } else {
       console.log("error", err);
-    }git
+    }
   }
 );
 let buttonState = false;
