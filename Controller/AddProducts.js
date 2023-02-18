@@ -4,16 +4,16 @@ export const AddProduct = (req, res) => {
   if (
     !(
       body.SlotName &&
-      body.ProductName &&
-      body.Price &&
-      body.Row &&
-      body.Col &&
-      body.Order &&
-      body.Catogory &&
-      body.Quantity &&
-      body.ImageURL &&
-      body.ProductManufactureDate &&
-      body.ProductExpiryDate
+      body.ProductName 
+      // body.Price &&
+      // body.Row &&
+      // body.Col &&
+      // body.Order &&
+      // body.Catogory &&
+      // body.Quantity &&
+      // body.ImageURL &&
+      // body.ProductManufactureDate &&
+      // body.ProductExpiryDate
     )
   ) {
     res.send({
