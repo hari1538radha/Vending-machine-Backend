@@ -3,8 +3,7 @@ export const AddProduct = (req, res) => {
   const body = req.body;
   if (
     !(
-      body.SlotName &&
-      body.ProductName 
+      (body.SlotName && body.ProductName)
       // body.Price &&
       // body.Row &&
       // body.Col &&
@@ -27,7 +26,7 @@ export const AddProduct = (req, res) => {
       Price: body.Price,
       Row: body.Row,
       Col: body.Col,
-      Order:body.Order,
+      Order: body.Order,
       Catogory: body.Catogory,
       Quantity: body.Quantity,
       ImageURL: body.ImageURL,

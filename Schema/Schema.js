@@ -4,17 +4,17 @@ const AddProductSchema = new mongoose.Schema(
   {
     SlotName: {
       type: String,
-      require:true
+      require: true,
     },
-    Row:{
-      type:Number,
-    require:true
+    Row: {
+      type: Number,
+      require: true,
     },
-    Col:{
-      type:Number
+    Col: {
+      type: Number,
     },
-    Order:{
-      type:Number
+    Order: {
+      type: Number,
     },
     ProductName: {
       type: String,
@@ -40,7 +40,5 @@ const AddProductSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
-
 
 export const AddProductModel = new model("addproduct", AddProductSchema);

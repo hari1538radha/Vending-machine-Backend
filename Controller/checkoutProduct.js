@@ -1,28 +1,32 @@
 import { AddProductModel } from "../Schema/Schema.js";
 
-export const CheckoutProducts = (req, res) => {
+export const CheckoutProducts = async (req, res) => {
   const BalanceCart = [];
   const body = req.body;
-  console.log(body);
 
-  const data = AddProductModel.find({ _id: body.id }).then((results) => {
-    console.log(results[0].Quantity);
+  for (var i = 0; i <= body.length - 1; i++) {
+    const datas = body[i];
 
-    if (body.Quantity <= results[0].Quantity) {
-      BalanceCart.push({
-        status: 200,
-        id: results[0]._id,
-        QuantityAvailable: results[0].Quantity,
-      });
-    } else {
-      BalanceCart.push({
-        status: 411,
-        id: results[0]._id,
-        QuantityAvailable:
-          body.Quantity - (body.Quantity - results[0].Quantity),
-      });
-    }
-    console.log(BalanceCart);
-    res.send(BalanceCart);
-  });
+    const data = await AddProductModel.find({ _id: datas.id }).then(
+      (results) => {
+        if (datas.Quantity <= results[0].Quantity) {
+          BalanceCart.push({
+            status: 200,
+            id: results[0]._id,
+            QuantityAvailable: results[0].Quantity,
+          });
+        } else {
+          BalanceCart.push({
+            status: 411,
+            id: results[0]._id,
+            QuantityAvailable:
+              datas.Quantity - (datas.Quantity - results[0].Quantity),
+          });
+        }
+      }
+    );
+  }
+  res.send(BalanceCart);
+  console.log(BalanceCart);
 };
+
