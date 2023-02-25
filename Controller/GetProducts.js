@@ -16,17 +16,7 @@ export const productDetails = (req, res) => {
               MainData.push(result);
               res.send(MainData);
             });
-          // const Row4 = AddProductModel.find({ Row: 4 })
-          //   .sort({ Col: 1 })
-          //   .then((result) => {
-          //     MainData.push(result);
-          //   });
-          // const Row5 = AddProductModel.find({ Row: 5 })
-          //   .sort({ Col: 1 })
-          //   .then((result) => {
-          //     MainData.push(result);
-          //     res.send(MainData);
-          //   });
+        
         });
     });
 
