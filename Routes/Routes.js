@@ -3,7 +3,7 @@ import { AddProduct } from "../Controller/AddProducts.js";
 import { productDetails } from "../Controller/GetProducts.js";
 import { AdminLogin } from "../Controller/Login.js";
 import { CheckoutProducts } from "../Controller/CheckoutProduct.js";
-import { Payment } from "../Controller/PaymentContoller.js";
+import { Payment } from "../Controller/PaymentControllerr.js";
 
 const Routes = pkg.Router();
 const { express } = pkg;
