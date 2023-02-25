@@ -10,5 +10,4 @@ Routes.post("/add", AddProduct);
 Routes.get("/products",productDetails)
 Routes.post("/login",AdminLogin)
 Routes.get("/cart",CheckoutProducts)
-
 export default Routes;
