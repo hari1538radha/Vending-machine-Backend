@@ -1,4 +1,4 @@
-import { AddProductModel } from "../Schema/Schema.js";
+import { AddProductModel } from "../Schema/ProductSchema.js";
 
 export const productDetails = (req, res) => {
   const MainData = [];
