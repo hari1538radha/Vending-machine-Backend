@@ -1,6 +1,6 @@
 import { AddProductModel } from "../Schema/ProductSchema.js";
 
-export const CheckoutProducts = async (req, res) => {
+export const CheckoutProductsInfo = async (req, res) => {
   const BalanceCart = [];
   const body = req.body;
 
