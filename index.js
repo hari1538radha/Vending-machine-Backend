@@ -5,7 +5,7 @@ import cors from "cors";
 import * as dotenv from "dotenv";
 import http from "http";
 import { Server } from "socket.io";
-import Routes from "./Routes/Routes";
+import Routes from "./Routes/Routes.js";
 
 dotenv.config();
 
