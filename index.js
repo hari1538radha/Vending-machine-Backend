@@ -23,6 +23,7 @@ app.use("/api", Routes);
 mongoose.set("strictQuery", false);
 
 mongoose.connect(
+  
   `mongodb+srv://HariR:${process.env.MONGO_PASS}@cluster0.fphdtyd.mongodb.net/?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,

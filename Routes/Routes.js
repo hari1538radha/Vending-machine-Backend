@@ -11,7 +11,7 @@ const { express } = pkg;
 Routes.post("/add", AddProduct);
 Routes.get("/products",productDetails)
 Routes.post("/login",AdminLogin)
-Routes.get("/cart",CheckoutProductsInfo)
+Routes.post("/cart",CheckoutProductsInfo)
 Routes.post("/payment",Payment)
 
 export default Routes;

@@ -1,11 +1,11 @@
 import { AddProductModel } from "../Schema/ProductSchema.js";
 
 export const CheckoutProductsInfo = async (req, res) => {
-  const BalanceCart = [];
+  const BalanceCart = [[],[]];
   var body = req.body.orders;
-  console.log(req.body);
+  console.log(req);
   const ObjLength = Object.keys(body).length;
-  // console.log(Object.keys(body));
+  
   const OrderID = Object.keys(body);
   const OrderQunatity = Object.values(body);
 console.log(req.body)
@@ -17,9 +17,10 @@ console.log(req.body)
         const {Price,ImageURL,ProductName} = results[0]
         console.log(Price)
         if (OrderQunatity[i] <= results[0].Quantity) {
-          BalanceCart.push({
+          BalanceCart[0].push({
             status: 200,
             id: results[0]._id,
+            Ordered:OrderQunatity[i],
             QuantityAvailable: results[0].Quantity,
             Price:Price,
             ImageURL:ImageURL,
@@ -28,11 +29,16 @@ console.log(req.body)
           });
           
         } else {
-          BalanceCart.push({
+          BalanceCart[1].push({
             status: 411,
             id: results[0]._id,
             QuantityAvailable:
               OrderQunatity[i] - (OrderQunatity[i] - results[0].Quantity),
+              id: results[0]._id,
+              Ordered:OrderQunatity[i],
+              Price:Price,
+              ImageURL:ImageURL,
+              ProductName:ProductName
           });
         }
       }
