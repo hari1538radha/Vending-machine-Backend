@@ -23,8 +23,7 @@ app.use("/api", Routes);
 mongoose.set("strictQuery", false);
 
 mongoose.connect(
-  // ${process.env.MONGO_PASS}
-  `mongodb+srv://HariR:hari1538@cluster0.fphdtyd.mongodb.net/?retryWrites=true&w=majority`,
+  `mongodb+srv://HariR:${process.env.MONGO_PASS}@cluster0.fphdtyd.mongodb.net/?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedtopology: true,
