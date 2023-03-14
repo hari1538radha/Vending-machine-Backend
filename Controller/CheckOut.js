@@ -3,7 +3,7 @@ import { AddProductModel } from "../Schema/ProductSchema.js";
 export const CheckoutProductsInfo = async (req, res) => {
   const BalanceCart = [];
   var body = req.body.orders;
-  console.log();
+  console.log(req.body);
   const ObjLength = Object.keys(body).length;
   // console.log(Object.keys(body));
   const OrderID = Object.keys(body);
